@@ -3,7 +3,8 @@
 	<head>
 		
 		<meta http-equiv="content-type" content="text/html; charset=utf-8"/ >
-			
+					<link rel="manifest" href="manifest.json">
+	
 			<title>App_ToDo_Liste</title>
 			
 		<style>
@@ -37,6 +38,13 @@
 					function entfernenAufgaben() {
 						document.getElementById("liste").removeChild(this);
 					}
+  if ("serviceWorker" in navigator) {
+    navigator.serviceWorker.register("sw.js")
+      .then(() => console.log("Service Worker registriert"))
+      .catch((err) => console.error("Fehler beim Registrieren des Service Workers:", err));
+  }
+
+
 				</script>
 		
 	</head>
